@@ -1,10 +1,10 @@
-# Nome do projeto
+# Flow Time
 
-`CURSO: Análise e Desenvolvimento de Sistemas`
+`CURSO: Sistemas de Informação`
 
 `DISCIPLINA: Trabalho Interdisciplinar Aplicações Web Front-End`
 
-`Xº semestre/ANO`
+`1º semestre/2026`
 
 Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 
@@ -16,7 +16,7 @@ Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 * Gabriel Vinicius Soares Russo
 * Pedro Henrique Silva Matta
 
-## Professor
+## Professora
 
 * Luciana Mara Freitas Diniz
 
