@@ -1,6 +1,6 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Equilibrar as tarefas do dia a dia, como estudos, trabalho e compromissos pessoais, é um desafio que muitos enfrentam atualmente. A falta de uma forma clara de organização acaba causando atrasos e uma sensação constante de que o tempo nunca é suficiente. Por esse motivo, o projeto foca no desenvolvimento de uma aplicação mobile prática para o autogerenciamento de tempo. O principal objetivo é criar uma ferramenta que ajuda a organizar tarefas, definir o que é prioridade e administrar a rotina de um jeito mais eficiente e direto. Ela é principalmente voltada para pessoas com rotinas bem corridas, como estudantes e profissionais. A proposta é justificada pela busca por mais produtividade e organização, entregando uma solução funcional e acessível para o controle das atividades diárias.
 
 ## Problema
 Aqui, a equipe deve fornecer uma descrição detalhada do problema a ser resolvido. Não é o momento adequado para abordar questões técnicas relacionadas ao desenvolvimento da aplicação. O objetivo é compreender e comunicar de maneira precisa qual é o desafio ou necessidade que motiva a criação da aplicação.
