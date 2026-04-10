@@ -2,6 +2,7 @@
 
 Equilibrar as tarefas do dia a dia, como estudos, trabalho e compromissos pessoais, é um desafio que muitos enfrentam atualmente. A falta de uma forma clara de organização acaba causando atrasos e uma sensação constante de que o tempo nunca é suficiente. Por esse motivo, o projeto foca no desenvolvimento de uma aplicação mobile prática para o autogerenciamento de tempo. O principal objetivo é criar uma ferramenta que ajuda a organizar tarefas, definir o que é prioridade e administrar a rotina de um jeito mais eficiente e direto. Ela é principalmente voltada para pessoas com rotinas bem corridas, como estudantes e profissionais. A proposta é justificada pela busca por mais produtividade e organização, entregando uma solução funcional e acessível para o controle das atividades diárias.
 
+
 ## Problema
 
 O grande desafio não é apenas a falta de tempo em si, mas a ausência de um método ou ferramenta que centralize e priorize o que realmente precisa ser feito. Com o excesso de informações e demandas que recebemos o tempo todo, é muito fácil ficar perdido em listas desorganizadas ou acabar focando em atividades menos urgentes, o que gera atrasos e uma queda bem perceptível na produtividade.
@@ -14,17 +15,15 @@ Como auxiliar pessoas com rotinas intensas a organizarem suas tarefas e prioriza
 
 ### Objetivo Geral:
 
-Desenvolver uma aplicação mobile prática e intuitiva para auxiliar pessoas com rotinas intensas no autogerenciamento de tempo e na organização eficiente de suas tarefas diárias.
+- Desenvolver uma aplicação mobile prática e intuitiva para auxiliar pessoas com rotinas intensas no autogerenciamento de tempo e na organização eficiente de suas tarefas diárias.
 
 ### Objetivos Específicos:
 
-Implementar um sistema de listagem e categorização de tarefas que permita ao usuário definir prioridades de forma rápida e visual.
+- Implementar um sistema de listagem e categorização de tarefas que permita ao usuário definir prioridades de forma rápida e visual.
+- Desenvolver uma funcionalidade de monitoramento de tempo para ajudar o usuário a controlar a duração dedicada a cada atividade específica.
+- Projetar uma interface otimizada para dispositivos móveis, focada na agilidade do registro de informações durante intervalos da rotina (como deslocamentos ou entre reuniões).
+- Oferecer um painel de visualização simples que apresente o progresso das tarefas do dia, facilitando a tomada de decisão sobre "o que fazer agora".
 
-Desenvolver uma funcionalidade de monitoramento de tempo para ajudar o usuário a controlar a duração dedicada a cada atividade específica.
-
-Projetar uma interface otimizada para dispositivos móveis, focada na agilidade do registro de informações durante intervalos da rotina (como deslocamentos ou entre reuniões).
-
-Oferecer um painel de visualização simples que apresente o progresso das tarefas do dia, facilitando a tomada de decisão sobre "o que fazer agora".
 
 ## Justificativa
 
@@ -34,29 +33,25 @@ Focar em objetivos específicos como o monitoramento de tempo e a visualização
 
 Este trabalho fundamenta-se na análise de mercado de ferramentas de produtividade e nas dores identificadas pelo grupo durante a fase de brainstorm e pesquisa inicial. O projeto destina-se a estudantes e profissionais que buscam uma solução funcional e acessível, baseando-se em princípios de gestão de tempo que priorizam a agilidade e a execução prática no dia a dia.
 
+
 ## Público-alvo
 
-O público-alvo desta aplicação é composto por pessoas que possuem rotinas dinâmicas e que sentem a necessidade de uma ferramenta centralizada para organizar suas obrigações diárias. O foco está em usuários que já utilizam o smartphone como principal ferramenta de apoio pessoal e profissional, buscando agilidade e simplicidade.
-
-Podemos detalhar esse público em dois perfis principais:
+O público-alvo são pessoas que possuem rotinas dinâmicas e que sentem a necessidade de uma ferramenta que ajude a organizar suas obrigações diárias. O foco está em usuários que já utilizam o smartphone como principal ferramenta de apoio pessoal e profissional, buscando agilidade e simplicidade.
+Esse público pode ser detalhado em dois perfis principais:
 
 ### 1. Estudantes (Ensino Médio e Superior)
 #### Contexto de uso: 
 Jovens que precisam conciliar aulas, trabalhos acadêmicos, estágios e vida social. Costumam usar o app em momentos de transição (no transporte público ou entre uma aula e outra) para conferir o que ainda precisa ser feito no dia.
-
 #### Relação com a tecnologia: 
 Nativos digitais com alta familiaridade com dispositivos móveis. Possuem pouca paciência para interfaces complexas ou cadastros demorados, priorizando a rapidez na inserção de dados.
-
 #### Conhecimento prévio: 
-Já tiveram contato com agendas físicas ou digitais, mas sentem dificuldade em manter a constância sem uma ferramenta que facilite a visualização das prioridades.
+Já tiveram contato com agendas físicas ou digitais, mas sentem dificuldade em manter a constância sem uma ferramenta que unifique as funções de aplicaticos diversos e facilite a visualização das prioridades.
 
 ### 2. Profissionais de Diversas Áreas
 #### Contexto de uso: 
-Adultos inseridos no mercado de trabalho que lidam com múltiplas tarefas e prazos. O uso ocorre principalmente durante o expediente para gerenciar demandas rápidas ou para planejar o dia antes de começar o trabalho.
-
+Adultos inseridos no mercado de trabalho que lidam com várias tarefas e prazos constantemente. O uso ocorre principalmente durante o expediente para gerenciar demandas rápidas ou para planejar o dia antes de começar o trabalho.
 #### Relação com a tecnologia: 
-Familiaridade moderada a alta. Buscam soluções que resolvam o problema de forma direta, sem "perfumarias", e que permitam um controle claro do tempo dedicado a cada atividade.
-
+Familiaridade moderada a alta. Buscam soluções que resolvam o problema de forma direta, e que permitam um controle claro do tempo dedicado a cada atividade.
 #### Relações hierárquicas: 
 Muitas vezes respondem a gestores ou clientes, o que gera uma pressão externa pelo cumprimento de prazos, tornando a organização uma necessidade de desempenho profissional.
 
