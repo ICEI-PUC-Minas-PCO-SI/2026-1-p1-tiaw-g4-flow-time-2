@@ -3,16 +3,14 @@
 Equilibrar as tarefas do dia a dia, como estudos, trabalho e compromissos pessoais, é um desafio que muitos enfrentam atualmente. A falta de uma forma clara de organização acaba causando atrasos e uma sensação constante de que o tempo nunca é suficiente. Por esse motivo, o projeto foca no desenvolvimento de uma aplicação mobile prática para o autogerenciamento de tempo. O principal objetivo é criar uma ferramenta que ajuda a organizar tarefas, definir o que é prioridade e administrar a rotina de um jeito mais eficiente e direto. Ela é principalmente voltada para pessoas com rotinas bem corridas, como estudantes e profissionais. A proposta é justificada pela busca por mais produtividade e organização, entregando uma solução funcional e acessível para o controle das atividades diárias.
 
 ## Problema
-Aqui, a equipe deve fornecer uma descrição detalhada do problema a ser resolvido. Não é o momento adequado para abordar questões técnicas relacionadas ao desenvolvimento da aplicação. O objetivo é compreender e comunicar de maneira precisa qual é o desafio ou necessidade que motiva a criação da aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
+O grande desafio não é apenas a falta de tempo em si, mas a ausência de um método ou ferramenta que centralize e priorize o que realmente precisa ser feito. Com o excesso de informações e demandas que recebemos o tempo todo, é muito fácil ficar perdido em listas desorganizadas ou acabar focando em atividades menos urgentes, o que gera atrasos em prazos importantes e uma queda bem perceptível na produtividade.
 
-O grupo pode optar por fazer uso de ferramentas como Design Thinking, que permite uma visão completa do problema.
+O contexto desse problema é principalmente o ambiente digital e móvel. Como os smartphones são nossa principal ferramenta de comunicação e fonte de informação, eles acabam sendo também a maior fonte de distração. Mas também é neles que o usuário pode buscar agilidade. A aplicação será usada no dia a dia dessas pessoas: entre uma aula e outra, no transporte público, ou durante o expediente de trabalho, momentos em que a pessoa precisa de uma resposta rápida sobre "o que eu tenho que fazer agora?" e sobre "quanto tempo devo dedicar na atividade atual?".
 
-> **Links úteis**:
-> - [Objetivos, problema de pesquisa e justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz certezas, suposições e dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Considerando isso tudo, o problema que buscamos resolver pode ser resumido na seguinte pergunta:
+
+Como auxiliar pessoas com rotinas intensas a organizarem suas tarefas e priorizarem suas atividades de forma prática e centralizada através de um dispositivo móvel?
 
 ## Objetivos
 
