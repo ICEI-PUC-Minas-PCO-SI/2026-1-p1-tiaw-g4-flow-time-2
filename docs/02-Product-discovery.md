@@ -11,6 +11,9 @@
 
 ![Matriz de alinhamento - mapa Stakeholders](images/Matriz%20de%20alinhamento%20-%20mapa%20Stakeholders.png)
 
+### Highlights de Pesquisa
+![Highlights de Pesquisa](images/Highlights%20de%20Pesquisa.png)
+
 ## Etapa de definição
 
 
