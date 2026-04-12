@@ -12,10 +12,18 @@ Neste momento, transformam-se os insights e validações obtidos em soluções t
 
 Com base na análise das personas, foram identificadas as seguintes histórias de usuários:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas  ⚠️ EXEMPLO ⚠️         | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões        ⚠️ EXEMPLO ⚠️         | Permitir que possam administrar contas |
+|EU COMO... `PERSONA` | QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
+|---------------------|------------------------------------|----------------------------------------|
+|Letícia              | Organizar tarefas em camadas, separando o que é prioridade do que não é. | Vencer a desorientação inicial e não me preocupar antecipadamente com os detalhes finais. |
+|Marcos               | Algo que me ajude a ter períodos de concentração total.                  | Conseguir focar em uma tarefa por vez e evitar a interrupção constante por jogos ou redes sociais.|
+|Marcos               | Um sistema de foco sem distraçôes.                                       | Evitar procrastinação sem distrações.|
+|Mariana              | Dividir as tarefas em etapas menores.                  | Não me sentir sobrecarregada ao iniciar tarefas.|
+|Letícia              | Algo para otimizar meu tempo gasto em tarefas relacionadas ao meu trabalho.| Organização e eficiência no ambiente de trabalho.|
+|Mariana              | Rotinas equilibradas. | Evitar o estresse e a ansiedade.|
+|Marcos               | Otimizar tempo para estudar.| Melhorar meu desempenho acadêmico e não perder prazos de atividades|
+|Mariana              | Lembrete sobre minhas tarefas diáriamente. | Me sentir menos sobrecarregada e não acumular tarefas. |
+|Marcos               | Colocar em prática o método pomodoro. | Para estudar inglês sem procrastinar. |
+|Leticia              | Alarmes para pausas e descansos. | Para evitar burnout. |
 
 > ⚠️ **APAGUE ESTA PARTE ANTES DE ENTREGAR SEU TRABALHO**
 
@@ -36,6 +44,13 @@ Apresente aqui as histórias de usuários que são relevantes para o projeto da 
 ##### Proposta para a persona XPTO ⚠️ EXEMPLO ⚠️
 
 ![Exemplo de proposta de valor](images/exemplo-proposta-valor.png)
+### Proposta de valor Leticia
+![Proposta de valor Leticia](images/Letícia%20proposta.png)
+### Proposta de valor marcos
+![Proposta de valor Marcos](images/Marcos%20Proposta.png)
+### Proposta de valor Mariana
+![Proposta de valor Mariana](images/Mariana%20Proposta.png)
+
 
 > ⚠️ **APAGUE ESTA PARTE ANTES DE ENTREGAR SEU TRABALHO**
 >
