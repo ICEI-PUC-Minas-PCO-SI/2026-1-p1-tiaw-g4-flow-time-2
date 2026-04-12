@@ -44,11 +44,11 @@ Apresente aqui as histórias de usuários que são relevantes para o projeto da 
 ##### Proposta para a persona XPTO ⚠️ EXEMPLO ⚠️
 
 ![Exemplo de proposta de valor](images/exemplo-proposta-valor.png)
-### Proposta de valor Leticia
+### Proposta de valor - Leticia
 ![Proposta de valor Leticia](images/Letícia%20Proposta.png)
-### Proposta de valor marcos
+### Proposta de valor - marcos
 ![Proposta de valor Marcos](images/Marcos%20Proposta.png)
-### Proposta de valor Mariana
+### Proposta de valor - Mariana
 ![Proposta de valor Mariana](images/Mariana%20Proposta.png)
 
 
