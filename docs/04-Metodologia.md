@@ -20,10 +20,10 @@ A gestão de issues é feita com etiquetas padronizadas:
 
 ### Divisão de papéis
 A equipe adota o **Scrum** como framework de desenvolvimento ágil:
-- **Scrum Master**: [Camila Fernanda]  
-- **Product Owner**: [Pedro Henrique]  
-- **Equipe de Desenvolvimento**: [Jonathan Cidierdes, Gustavo Victor]  
-- **Designers**: [Gabriel Vinicius]  
+- **Scrum Master**: Camila Fernanda  
+- **Product Owner**: Pedro Henrique  
+- **Equipe de Desenvolvimento**: Jonathan Cidierdes, Gustavo Victor  
+- **Designers**: Gabriel Vinicius  
 
 As reuniões de acompanhamento são realizadas semanalmente, com definição de sprints e revisão das entregas.
 
@@ -34,7 +34,7 @@ O quadro é dividido em:
 - **Em andamento**: tarefas em execução  
 - **Concluído**: tarefas finalizadas  
 
-![Imagem do Kanban](link_da_imagem)
+[//]: # (![Imagem do Kanban]link_da_imagem)
 
 ## Ferramentas
 | Ambiente                  | Plataforma       | Link de acesso |
