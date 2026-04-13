@@ -27,7 +27,6 @@ Com base na análise das personas, foram identificadas as seguintes histórias d
 
 ## Proposta de valor
 
-**✳️✳️✳️ APRESENTE O DIAGRAMA DA PROPOSTA DE VALOR PARA CADA PERSONA ✳️✳️✳️**
 
 
 
@@ -49,7 +48,7 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 
 | ID     | Descrição do Requisito                                   | Prioridade |
 | ------ | ---------------------------------------------------------- | ---------- |
-| RF-000 | Permitir que o usuário cadastre tarefas ⚠️ EXEMPLO ⚠️ | ALTA       |
+| RF-000 | Permitir que o usuário cadastre tarefas | ALTA       |
 | RF-001 | Gestão de tarefas | ALTA     |
 | RF-002 | Quebra de tarefas (microtarefas) | ALTA     |
 | RF-003 | Planejamento diário e semanal | ALTA      |
