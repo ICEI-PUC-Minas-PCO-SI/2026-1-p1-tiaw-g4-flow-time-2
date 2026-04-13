@@ -4,7 +4,7 @@
 O grupo desenvolveu wireframes simples para representar a estrutura inicial das telas.  
 Esses protótipos mostram a disposição dos elementos principais (menus, botões, campos de entrada).  
 
-![Wireframe](link_da_imagem)
+![Wireframe](images/Imagem%20Prototipo%20de%20Baixa%20Qualidade.png)
 
 ## Protótipo de alta fidelidade
 A versão de alta fidelidade foi criada no **Figma**, incluindo cores, tipografia e ícones.  
