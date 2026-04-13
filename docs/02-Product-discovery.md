@@ -5,8 +5,6 @@
 
 ## Etapa de entendimento
 
-**✳️✳️✳️ APRESENTE OS ARTEFATOS DA ETAPA  ✳️✳️✳️**
-
 ### Matriz de Elinhamento - Mapa Stakeholders
 
 ![Matriz de alinhamento - mapa Stakeholders](images/Matriz%20de%20alinhamento%20-%20mapa%20Stakeholders.png)
@@ -19,8 +17,6 @@
 
 
 ### Personas
-
-**✳️✳️✳️ APRESENTE OS DIAGRAMAS DE PERSONAS ✳️✳️✳️**
 
 
 
