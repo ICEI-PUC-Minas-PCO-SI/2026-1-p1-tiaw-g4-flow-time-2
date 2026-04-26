@@ -1,0 +1,31 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon{
+    width: 80px;
+}
+
+.faixa_titulo{
+    background-color: aquamarine;
+}
+
+button{
+    border-radius: 33px;
+    background-color:darkcyan;
+    width: 200px;
+}
+
+body {
+    
+}
+
+footer {
+    text-align: center;
+}
