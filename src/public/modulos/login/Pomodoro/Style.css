@@ -1,0 +1,166 @@
+
+:root {
+  --azul: #1b6a82;
+  --branco: #fff;
+  --verde: #41d09a;
+  --Azul-claro: #c8f3ec;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+}
+
+.logo {
+  width: 50px;
+}
+
+body {
+   background: linear-gradient(to bottom, #cfe7e1, #eaf3f1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container principal */
+.app {
+  width: 320px;
+  height: 650px;
+  background: var(--branco);
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título */
+h1 {
+  width: 100%;
+  background: var(--Azul-claro);
+  color: var(--azul);
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.timer-text {
+  color: var(--azul);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Timer */
+.timer-container {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin: auto;
+}
+
+/* Texto central */
+.timer-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* SVG */
+.progress-ring {
+  transform: scaleX(-1) rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+/* Círculo fundo */
+.progress-ring .bg {
+  fill: none;
+  stroke: var(--Azul-claro);
+  stroke-width: 8;
+}
+
+/* Círculo animado */
+.progress-ring .progress {
+  fill: none;
+  stroke: url(#gradiente);
+  stroke-width: 8;
+  stroke-linecap: round;
+  
+  stroke-dasharray: 754;      /* comprimento do círculo */
+  stroke-dashoffset: 754;     /* começa invisível */
+  transition: stroke-dashoffset 1s linear;
+}
+
+/* Botão principal */
+.btn-start {
+  margin-top: 20px;
+  background: linear-gradient(to right, #1b6a82, #41d09a);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 50px;
+  width: 85%;
+  font-size: 20px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-icon {
+  width: 24px;
+}
+
+/* Botões menores */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.controls button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 50px;
+    border: none;
+    background: #c8f3ec;
+    cursor: pointer;
+    font-size: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.footer {
+  width: 100%;
+  background: #2b6f7d;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  border-radius: 0 0 30px 30px;
+  font-style: italic;
+}
