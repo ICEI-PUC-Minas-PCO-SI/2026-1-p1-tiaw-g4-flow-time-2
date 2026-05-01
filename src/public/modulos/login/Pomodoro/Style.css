@@ -1,4 +1,4 @@
-
+/* Cores*/
 :root {
   --azul: #1b6a82;
   --branco: #fff;
@@ -6,6 +6,7 @@
   --Azul-claro: #c8f3ec;
 }
 
+/* Icones */
 .header {
   width: 100%;
   display: flex;
@@ -101,7 +102,7 @@ h1 {
   stroke-linecap: round;
   
   stroke-dasharray: 754;      /* comprimento do círculo */
-  stroke-dashoffset: 754;     /* começa invisível */
+  stroke-dashoffset: 754;     
   transition: stroke-dashoffset 1s linear;
 }
 
