@@ -73,3 +73,47 @@ footer {
     margin-top: 40px;
     font-style: italic; 
 }
+
+.caixa-repeticao-semanal {
+    background-color: #d1f0e9; 
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.linha-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.icon-check {
+    width: 25px; 
+    margin-right: 10px;
+}
+
+.texto-checkbox {
+    color: darkcyan;
+    font-weight: bold;
+}
+
+.linha-dias {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bolinha-dia {
+    width: 32px;
+    height: 32px;
+    border: 1px solid darkcyan;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darkcyan;
+    font-size: 11px;
+}
+
+.bolinha-dia.ativa {
+    background-color: darkcyan;
+    color: white;
+}
