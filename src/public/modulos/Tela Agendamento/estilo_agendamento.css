@@ -1,0 +1,75 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 20px;
+}
+
+header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px; 
+}
+
+.icon {
+    width: 40px;
+}
+
+.faixa_titulo {
+    background-color: aquamarine;
+    text-align: center; 
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.bloco {
+    margin-bottom: 25px;
+}
+
+.campo-texto {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.linha-data-hora {
+    display: flex;
+    justify-content: space-between;
+}
+
+.caixa-data-hora {
+    width: 48%; 
+}
+
+.caixa-data-hora p {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.centralizar-botao {
+    text-align: center;
+}
+
+button {
+    border-radius: 33px;
+    background-color: darkcyan;
+    color: white; 
+    border: none; 
+    width: 200px;
+    padding: 15px; 
+    font-weight: bold;
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-style: italic; 
+}
