@@ -69,7 +69,9 @@ h1 {
 
 #usuarioSelect {
 
-  width: 160px;
+  width: auto;
+
+  min-width: 160px;
 
   padding: 12px 18px;
 
