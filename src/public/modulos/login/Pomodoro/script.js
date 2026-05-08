@@ -133,6 +133,7 @@ async function carregarUsuarios() {
 
         const resposta =
             await fetch('../../../db/db.json')
+            //fetch('/usuarios') no backend real usar essa rota
 
             if (!resposta.ok) {
 
