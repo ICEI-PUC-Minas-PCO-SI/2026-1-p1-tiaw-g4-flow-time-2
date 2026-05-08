@@ -58,6 +58,43 @@ h1 {
   letter-spacing: 1px;
 }
 
+.usuario-container {
+
+  margin-top: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#usuarioSelect {
+
+  width: 180px;
+
+  padding: 8px 12px;
+
+  border-radius: 20px;
+
+  border: none;
+
+  background: var(--Azul-claro);
+
+  color: var(--azul);
+
+  font-size: 14px;
+
+  text-align: center;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+#usuarioSelect:hover {
+  transform: scale(1.02);
+  transition: 0.2s;
+}
+
 .timer-text {
   color: var(--azul);
   font-family: Arial, Helvetica, sans-serif;
