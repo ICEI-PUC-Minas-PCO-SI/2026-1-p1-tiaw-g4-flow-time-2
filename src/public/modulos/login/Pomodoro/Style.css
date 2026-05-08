@@ -60,39 +60,68 @@ h1 {
 
 .usuario-container {
 
-  margin-top: 15px;
+  position: relative;
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#usuarioSelect::-ms-expand {
+  display: none;
 }
 
 #usuarioSelect {
 
-  width: 180px;
+  width: 160px;
 
-  padding: 8px 12px;
+  padding: 12px 18px;
 
-  border-radius: 20px;
+  box-sizing: border-box;
 
-  border: none;
 
-  background: var(--Azul-claro);
+  border-radius: 30px;
 
-  color: var(--azul);
+  background: linear-gradient(
+    to right,
+      #1b6a82,
+      #41d09a
+  );
 
-  font-size: 14px;
+  color: white;
 
-  text-align: center;
+  font-size: 16px;
+
+  font-weight: 500;
 
   outline: none;
 
   cursor: pointer;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.08);
+
+  transition:
+  filter 0.2s ease,
+  box-shadow 0.2s ease;
+
+  text-align: center;
 }
 
 #usuarioSelect:hover {
-  transform: scale(1.02);
-  transition: 0.2s;
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 6px 14px rgba(0,0,0,0.18);
+}
+
+#usuarioSelect option {
+
+  background: white;
+
+  color: var(--azul);
 }
 
 .timer-text {
