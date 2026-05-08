@@ -2,24 +2,50 @@
   "usuarios": [
     {
       "id": 1,
+      "tipo": "admin",
       "login": "admin",
-      "senha": "123",
+      "senha": "admin",
       "nome": "Administrador do Sistema",
       "email": "admin@abc.com"
     },
     {
       "id": 2,
-      "login": "user",
+      "tipo": "usuario",
+      "login": "Marcos",
       "senha": "123",
-      "nome": "Usuario Comum",
-      "email": "user@abc.com"
+      "nome": "Marcos",
+      "email": "Marcos@gmail.com",
+      "pomodoro": {
+        "foco": 25,
+        "pausa": 5
+      }
     },
     {
-      "login": "rommel",
+      "id": 3,
+      "tipo": "usuario",
+      "login": "Mariana",
       "senha": "123",
-      "nome": "Rommel",
-      "email": "rommel@gmail.com",
-      "id": 3
+      "nome": "Mariana",
+      "email": "mariana@gmail.com",
+      "pomodoro": {
+        "foco": 50,
+        "pausa": 10
+      }
+    },
+    {
+      "id": 4,
+      "tipo": "usuario",
+      "login": "Leticia",
+      "senha": "123",
+      "nome": "Leticia",
+      "email": "leticia@gmail.com",
+      "pomodoro": {
+        "foco": 90,
+        "pausa": 20
+      }
     }
+    
   ]
 }
+
+
