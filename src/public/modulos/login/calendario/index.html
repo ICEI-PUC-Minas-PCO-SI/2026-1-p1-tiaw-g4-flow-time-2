@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário StudyHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <header>
+            <div class="top-bar">
+                <div class="menu-icon">
+                    <img src="menu.png" alt="Menu">
+                </div>
+                <div class="calendar-logo">
+                    <img src="calendario.png" alt="Calendário">
+                </div>
+                <div class="user-icon">
+                    <img src="Perfil.png" alt="Perfil">
+                </div>
+            </div>
+            <div class="title-bar">CALENDÁRIO</div>
+        </header>
+
+        <main>
+            <div class="calendar-card">
+                <div class="calendar-header">
+                    <button id="prevMonth">&lt;</button>
+                    <h2 id="monthDisplay">Maio 2026</h2>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+                
+                <div class="weekdays">
+                    <div>D</div><div>S</div><div>T</div><div>Q</div><div>Q</div><div>S</div><div>S</div>
+                </div>
+                
+                <div class="days-grid" id="daysGrid">
+                    </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                
+                <p>Uma frase motivacional...</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
