@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento</title>
     <link rel="stylesheet" href="estilo_agendamento.css">
 </head>
-
 <body>
     <header>
-        <img src="img/menu.png" class="icon">
-        <img src="img/agendar.png" class="icon">
-        <img src="img/perfil.png" class="icon">
+        <img src="img/menu.png" class="icon" alt="Menu">
+        <img src="img/agendar.png" class="icon-meio" alt="Agendar">
+        <img src="img/perfil.png" class="icon" alt="Perfil">
     </header>
 
     <div class="faixa_titulo">
@@ -20,51 +18,45 @@
     </div>
 
     <main>
-        <div class="bloco">
-            <input type="text" placeholder="Nome da tarefa..." class="campo-texto">
+        <div class="bloco caixa-entrada">
+            <span class="mais">+</span>
+            <input type="text" placeholder="Nome da Tarefa..." class="campo-tarefa">
         </div>
         
         <div class="bloco linha-data-hora">
             <div class="caixa-data-hora">
                 <p>DATA</p>
-                <input type="text" placeholder="00/00/00" class="campo-texto">
+                <input type="text" placeholder="00/00/0000" class="input-transparente" oninput="mascaraData(this)">
             </div>
             <div class="caixa-data-hora">
                 <p>HORA</p>
-                <input type="text" placeholder="00:00" class="campo-texto">
+                <input type="text" placeholder="00:00" class="input-transparente" oninput="mascaraHora(this)">
             </div>
         </div>
         
-        <div class="bloco caixa-repeticao-semanal">
+        <div class="bloco caixa-repeticao ativa" id="caixa-semanal" onclick="alternarCheckbox('semanal')">
             <div class="linha-checkbox">
-                <img src="img/checkbox.png" class="icon-check" alt="Marcado">
+                <img src="img/checkbox.png" class="icon-check" id="icone-semanal" alt="Marcado">
                 <p class="texto-checkbox">Repetir semanalmente:</p>
-            </div>
-            
-            <div class="linha-dias">
-                <div class="bolinha-dia">DOM</div>
-                <div class="bolinha-dia">SEG</div>
-                <div class="bolinha-dia ativa">TER</div>
-                <div class="bolinha-dia">QUA</div>
-                <div class="bolinha-dia">QUI</div>
-                <div class="bolinha-dia">SEX</div>
-                <div class="bolinha-dia ativa">SÁB</div>
             </div>
         </div>
 
-        <div class="bloco linha-checkbox">
-            <img src="img/emptybox.png" class="icon-check" alt="Desmarcado">
-            <p class="texto-checkbox">Repetir mensalmente</p>
+        <div class="bloco caixa-repeticao" id="caixa-mensal" onclick="alternarCheckbox('mensal')">
+            <div class="linha-checkbox">
+                <img src="img/emptybox.png" class="icon-check" id="icone-mensal" alt="Desmarcado">
+                <p class="texto-checkbox">Repetir mensalmente</p>
+            </div>
         </div>
 
         <div class="bloco centralizar-botao">
-            <button>AGENDAR</button>
+            <button class="botao-agendar" onclick="salvarAgendamento()">AGENDAR</button>
         </div>
     </main>
     
     <footer>
         <p>Uma frase motivacional...</p>
     </footer>
-</body>
 
+    <script src="script.js"></script>
+</body>
 </html>

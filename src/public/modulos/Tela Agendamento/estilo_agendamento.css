@@ -6,37 +6,84 @@
 }
 
 body {
-    padding: 20px;
+    background-color: #f2fcfb; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+
+input {
+    -webkit-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
 }
 
 header {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 25px; 
+    padding: 20px 40px;
 }
 
 .icon {
-    width: 40px;
+    width: 35px;
+}
+
+.icon-meio {
+    width: 45px;
 }
 
 .faixa_titulo {
-    background-color: aquamarine;
+    background-color: #c9ebe3;
+    color: #1a606e;
+    font-weight: bold;
     text-align: center; 
     padding: 15px;
     margin-bottom: 25px;
+    width: 100%;
+}
+
+main {
+    padding: 0 40px;
+    flex: 1; 
 }
 
 .bloco {
     margin-bottom: 25px;
 }
 
-.campo-texto {
+.caixa-entrada {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    padding: 10px 15px;
+    background-color: white;
+}
+
+.mais {
+    font-size: 26px;
+    color: #1a606e;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.campo-tarefa {
     width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
+    border: none;
+    outline: none;
     font-size: 16px;
+    color: #1a606e;
 }
 
 .linha-data-hora {
@@ -46,74 +93,80 @@ header {
 
 .caixa-data-hora {
     width: 48%; 
+    background-color: #c9ebe3;
+    border-radius: 15px;
+    padding: 15px;
 }
 
 .caixa-data-hora p {
+    color: #1a606e;
+    font-size: 12px;
     margin-bottom: 5px;
+}
+
+.input-transparente {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 22px;
     font-weight: bold;
+    color: #1a606e;
+    outline: none;
 }
 
-.centralizar-botao {
-    text-align: center;
-}
-
-button {
-    border-radius: 33px;
-    background-color: darkcyan;
-    color: white; 
-    border: none; 
-    width: 200px;
-    padding: 15px; 
-    font-weight: bold;
-    font-size: 16px;
-}
-
-footer {
-    text-align: center;
-    margin-top: 40px;
-    font-style: italic; 
-}
-
-.caixa-repeticao-semanal {
-    background-color: #d1f0e9; 
+.caixa-repeticao {
     padding: 15px;
     border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.caixa-repeticao.ativa {
+    background-color: #c9ebe3; 
 }
 
 .linha-checkbox {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 .icon-check {
     width: 25px; 
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
 .texto-checkbox {
-    color: darkcyan;
+    color: #1a606e;
     font-weight: bold;
+    font-size: 16px;
 }
 
-.linha-dias {
-    display: flex;
-    justify-content: space-between;
+.campo-erro {
+    border: 2px solid red !important;
 }
 
-.bolinha-dia {
-    width: 32px;
-    height: 32px;
-    border: 1px solid darkcyan;
-    border-radius: 50%; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: darkcyan;
-    font-size: 11px;
+.centralizar-botao {
+    text-align: center;
+    margin-top: 40px;
 }
 
-.bolinha-dia.ativa {
-    background-color: darkcyan;
+.botao-agendar {
+    border-radius: 33px;
+    background: linear-gradient(to right, #1a606e, #3cd1aa);
+    color: white; 
+    border: none; 
+    width: 100%; 
+    padding: 15px; 
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    font-style: italic; 
+    background-color: #1a606e;
     color: white;
+    padding: 50px 20px;
+    width: 100%;
 }
