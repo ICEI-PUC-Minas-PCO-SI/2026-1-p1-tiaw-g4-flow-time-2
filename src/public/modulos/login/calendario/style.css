@@ -1,5 +1,5 @@
-/* Configurações Gerais */
-* {
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,7 +14,7 @@ body {
     min-height: 100vh;
 }
 
-/* Container do Celular */
+
 .mobile-container {
     width: 360px;
     height: 640px;
@@ -28,7 +28,7 @@ body {
     box-shadow: 0 20px 50px rgba(0,0,0,0.2);
 }
 
-/* Header (Barra de cima) */
+
 header {
     background-color: white;
 }
@@ -66,7 +66,7 @@ header {
     font-size: 14px;
 }
 
-/* Calendário */
+
 main {
     flex: 1;
     padding: 20px;
@@ -105,47 +105,60 @@ main {
     margin-bottom: 15px;
 }
 
+
 .days-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(7, 1fr); /* Mantém estritamente 7 colunas */
+    gap: 5px;                              /* Diminuído um pouco para caber no container */
     text-align: center;
+    justify-items: center;                 /* Centraliza horizontalmente cada dia na sua coluna */
+    align-items: center;                   /* Centraliza verticalmente */
 }
 
-/* Estilo dos Dias e Bolinhas */
+
 .day {
-    padding: 10px 0;
     color: #1B6A82;
     font-weight: 600;
     position: relative;
     font-size: 14px;
+    cursor: pointer;
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  
+    width: 32px; 
+    height: 32px;
+    border-radius: 50%;
+    transition: background 0.2s;
 }
+
+
+.day:hover {
+    background-color: rgba(27, 106, 130, 0.1);
+}
+
 
 .day.has-event::after {
     content: '●';
-    color: #41D09A; /* Verde que você mandou */
-    font-size: 10px;
+    color: #41D09A; 
+    font-size: 8px; /* Reduzido levemente para não empurrar o layout */
     position: absolute;
     bottom: -2px;
     left: 50%;
     transform: translateX(-50%);
 }
 
+
 .day.selected {
-    background-color: #1B6A82; /* Azul que você mandou */
-    color: white;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #1B6A82 !important; 
+    color: white !important;
 }
 
-/* Rodapé Azul */
 footer {
-    background-color: #1B6A82; /* Azul que você mandou */
+    background-color: #1B6A82; 
     color: white;
     padding: 25px 20px;
     text-align: center;

@@ -21,5 +21,21 @@
       "email": "rommel@gmail.com",
       "id": 3
     }
+  ],
+  "agendamentos": [
+    {
+      "id": "1",
+      "nome": "Aula de Inglês",
+      "data_hora": "2026-05-10T19:00:00",
+      "repeticao_semanal": true,
+      "repeticao_mensal": false
+    },
+    {
+      "id": "2",
+      "nome": "Fechamento de Caixa",
+      "data_hora": "2026-05-29T17:30:00",
+      "repeticao_semanal": true,
+      "repeticao_mensal": false
+    }
   ]
 }

@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../../../pucestudos"
+		},
+		{
+			"path": "../../../../../../.."
+		}
+	],
+	"settings": {
+		"editor.inlineSuggest.edits.allowCodeShifting": "horizontal",
+		"liveServer.settings.multiRootWorkspaceName": "pucestudos"
+	}
+}
