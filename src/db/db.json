@@ -16,7 +16,7 @@
     },
     {
       "login": "rommel",
-      "senha": "123",
+      "senha": "123", 
       "nome": "Rommel",
       "email": "rommel@gmail.com",
       "id": 3
@@ -25,3 +25,37 @@
 }
 
 
+{
+  "tarefas": [
+    {
+      "id": "1",
+      "usuario_id": "1",
+      "prioridade_id": "2",
+      "categoria_id": "1",
+      "nome": "Aula de Inglês",
+      "data_hora": "2026-05-10T19:00:00",
+      "repeticao_semanal": true,
+      "repeticao_mensal": false
+    },
+    {
+      "id": "2",
+      "usuario_id": "2",
+      "prioridade_id": "1",
+      "categoria_id": "3",
+      "nome": "Fechamento de Caixa",
+      "data_hora": "2026-05-29T17:30:00",
+      "repeticao_semanal": false,
+      "repeticao_mensal": true
+    },
+    {
+      "id": "3",
+      "usuario_id": "1",
+      "prioridade_id": "3",
+      "categoria_id": "2",
+      "nome": "Academia",
+      "data_hora": "2026-05-20T07:00:00",
+      "repeticao_semanal": false,
+      "repeticao_mensal": false
+    }
+  ]
+}

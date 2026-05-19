@@ -98,29 +98,23 @@ function salvarAgendamento() {
     });
 
     if (erro) {
-        alert("Ops! Preencha todos os campos obrigatórios.");
+        alert("Preencha todos os campos obrigatórios!");
         return; 
     }
 
-    // --- PUXANDO OS DADOS ANTES PARA DESCOBRIR O PRÓXIMO ID ---
     let dadosSalvos = localStorage.getItem('db_agendamentos');
     let objetoJSON = dadosSalvos ? JSON.parse(dadosSalvos) : { "agendamentos": [] };
 
-    // --- A LÓGICA DO ID SEQUENCIAL (1, 2, 3...) ---
-    let proximoId = "1"; // Começa no 1 se a lista estiver vazia
+    let proximoId = "1"; 
     if (objetoJSON.agendamentos.length > 0) {
-        // Pega o último item da lista
         let ultimoItem = objetoJSON.agendamentos[objetoJSON.agendamentos.length - 1];
-        // Transforma o ID dele em número, soma 1, e volta a ser texto
         proximoId = (parseInt(ultimoItem.id) + 1).toString();
     }
 
-    // A MÁGICA DA CONVERSÃO DE DATA
     let partesData = inputData.value.split('/');
     let dataPadraoInternacional = `${partesData[2]}-${partesData[1]}-${partesData[0]}`;
     let horaComSegundos = `${inputHora.value}:00`;
 
-    // Criando o agendamento com o ID novo e certinho
     let novoAgendamento = {
         id: proximoId, 
         nome: inputTarefa.value,
@@ -129,10 +123,9 @@ function salvarAgendamento() {
         repeticao_mensal: repeticaoMensal
     };
 
-    // Adiciona na lista e salva
     objetoJSON.agendamentos.push(novoAgendamento);
     localStorage.setItem('db_agendamentos', JSON.stringify(objetoJSON));
 
     alert("Agendamento salvo com sucesso!");
-    location.reload(); 
+    location.reload();
 }

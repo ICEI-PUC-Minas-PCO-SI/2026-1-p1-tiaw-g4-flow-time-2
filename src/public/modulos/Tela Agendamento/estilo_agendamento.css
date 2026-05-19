@@ -72,7 +72,7 @@ main {
 }
 
 .mais {
-    font-size: 26px;
+    font-size: 25px;
     color: #1a606e;
     font-weight: bold;
     margin-right: 15px;
@@ -142,7 +142,7 @@ main {
 }
 
 .campo-erro {
-    border: 2px solid red !important;
+    border: 2px solid rgb(190, 72, 4) !important;
 }
 
 .centralizar-botao {
