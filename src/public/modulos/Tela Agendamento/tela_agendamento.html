@@ -34,10 +34,10 @@
             </div>
         </div>
         
-        <div class="bloco caixa-repeticao ativa" id="caixa-semanal" onclick="alternarCheckbox('semanal')">
+        <div class="bloco caixa-repeticao" id="caixa-semanal" onclick="alternarCheckbox('semanal')">
             <div class="linha-checkbox">
-                <img src="img/checkbox.png" class="icon-check" id="icone-semanal" alt="Marcado">
-                <p class="texto-checkbox">Repetir semanalmente:</p>
+                <img src="img/emptybox.png" class="icon-check" id="icone-semanal" alt="Desmarcado">
+                <p class="texto-checkbox">Repetir semanalmente</p>
             </div>
         </div>
 
@@ -48,13 +48,31 @@
             </div>
         </div>
 
+        <div class="bloco linha-selects">
+            <select id="categoria" class="caixa-select">
+                <option value="" disabled selected>Categoria</option>
+                <option value="1">Trabalho</option>
+                <option value="2">Estudos</option>
+                <option value="3">Saúde</option>
+                <option value="4">Lazer</option>
+                <option value="5">Outros</option>
+            </select>
+
+            <select id="prioridade" class="caixa-select">
+                <option value="" disabled selected>Prioridade</option>
+                <option value="1">Alta</option>
+                <option value="2">Média</option>
+                <option value="3">Baixa</option>
+            </select>
+        </div>
+
         <div class="bloco centralizar-botao">
             <button class="botao-agendar" onclick="salvarAgendamento()">AGENDAR</button>
         </div>
     </main>
     
     <footer>
-        <p>Uma frase motivacional...</p>
+        <p>[Frase motivacional]</p>
     </footer>
 
     <script src="script.js"></script>

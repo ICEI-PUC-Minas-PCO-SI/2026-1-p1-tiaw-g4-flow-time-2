@@ -83,11 +83,14 @@ function salvarAgendamento() {
     let inputTarefa = document.querySelector('.campo-tarefa');
     let inputData = document.querySelector('input[placeholder="00/00/0000"]');
     let inputHora = document.querySelector('input[placeholder="00:00"]');
+    let selectCategoria = document.getElementById('categoria');
+    let selectPrioridade = document.getElementById('prioridade');
     
     let repeticaoSemanal = document.getElementById('caixa-semanal').classList.contains('ativa');
     let repeticaoMensal = document.getElementById('caixa-mensal').classList.contains('ativa');
 
     let erro = false;
+    
     [inputTarefa, inputData, inputHora].forEach(input => {
         if (input.value.trim() === "") {
             input.parentElement.classList.add('campo-erro');
@@ -97,17 +100,26 @@ function salvarAgendamento() {
         }
     });
 
+    [selectCategoria, selectPrioridade].forEach(select => {
+        if (select.value === "") {
+            select.classList.add('campo-erro');
+            erro = true;
+        } else {
+            select.classList.remove('campo-erro');
+        }
+    });
+
     if (erro) {
         alert("Preencha todos os campos obrigatórios!");
         return; 
     }
 
-    let dadosSalvos = localStorage.getItem('db_agendamentos');
-    let objetoJSON = dadosSalvos ? JSON.parse(dadosSalvos) : { "agendamentos": [] };
+    let dadosSalvos = localStorage.getItem('db_tarefas');
+    let objetoJSON = dadosSalvos ? JSON.parse(dadosSalvos) : { "tarefas": [] };
 
     let proximoId = "1"; 
-    if (objetoJSON.agendamentos.length > 0) {
-        let ultimoItem = objetoJSON.agendamentos[objetoJSON.agendamentos.length - 1];
+    if (objetoJSON.tarefas.length > 0) {
+        let ultimoItem = objetoJSON.tarefas[objetoJSON.tarefas.length - 1];
         proximoId = (parseInt(ultimoItem.id) + 1).toString();
     }
 
@@ -115,17 +127,20 @@ function salvarAgendamento() {
     let dataPadraoInternacional = `${partesData[2]}-${partesData[1]}-${partesData[0]}`;
     let horaComSegundos = `${inputHora.value}:00`;
 
-    let novoAgendamento = {
+    let novaTarefa = {
         id: proximoId, 
+        usuario_id: "1",
+        prioridade_id: selectPrioridade.value,
+        categoria_id: selectCategoria.value,
         nome: inputTarefa.value,
         data_hora: `${dataPadraoInternacional}T${horaComSegundos}`,
         repeticao_semanal: repeticaoSemanal,
         repeticao_mensal: repeticaoMensal
     };
 
-    objetoJSON.agendamentos.push(novoAgendamento);
-    localStorage.setItem('db_agendamentos', JSON.stringify(objetoJSON));
+    objetoJSON.tarefas.push(novaTarefa);
+    localStorage.setItem('db_tarefas', JSON.stringify(objetoJSON));
 
-    alert("Agendamento salvo com sucesso!");
+    alert("Tarefa agendada com sucesso!");
     location.reload();
 }

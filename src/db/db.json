@@ -1,38 +1,66 @@
 {
   "usuarios": [
     {
-      "id": 1,
-      "login": "admin",
+      "id": "1",
+      "login": "Marcos",
       "senha": "123",
-      "nome": "Administrador do Sistema",
-      "email": "admin@abc.com"
+      "nome": "Marcos",
+      "email": "Marcos@gmail.com"
     },
     {
-      "id": 2,
-      "login": "user",
+      "id": "2",
+      "login": "Mariana",
       "senha": "123",
-      "nome": "Usuario Comum",
-      "email": "user@abc.com"
+      "nome": "Mariana",
+      "email": "mariana@gmail.com"
     },
     {
-      "login": "rommel",
-      "senha": "123", 
-      "nome": "Rommel",
-      "email": "rommel@gmail.com",
-      "id": 3
+      "id": "3",
+      "login": "Leticia",
+      "senha": "123",
+      "nome": "Leticia",
+      "email": "leticia@gmail.com"
     }
-  ]
-}
-
-
-{
+  ],
+  "pomodoros": [
+    {
+      "id": "1",
+      "usuario_id": "1",
+      "foco": 25,
+      "pausa": 5
+    },
+    {
+      "id": "2",
+      "usuario_id": "2",
+      "foco": 50,
+      "pausa": 10
+    },
+    {
+      "id": "3",
+      "usuario_id": "3",
+      "foco": 90,
+      "pausa": 20
+    }
+  ],
+  "prioridades": [
+    { "id": "1", "nome": "Alta" },
+    { "id": "2", "nome": "Média" },
+    { "id": "3", "nome": "Baixa" }
+  ],
+  "categorias": [
+    { "id": "1", "nome": "Trabalho" },
+    { "id": "2", "nome": "Estudos" },
+    { "id": "3", "nome": "Saúde" },
+    { "id": "4", "nome": "Lazer" },
+    { "id": "5", "nome": "Outros" }
+  ],
   "tarefas": [
     {
       "id": "1",
       "usuario_id": "1",
       "prioridade_id": "2",
-      "categoria_id": "1",
-      "nome": "Aula de Inglês",
+      "categoria_id": "2",
+      "nome": "Revisar matéria",
       "data_hora": "2026-05-10T19:00:00",
       "repeticao_semanal": true,
       "repeticao_mensal": false
@@ -42,17 +70,17 @@
       "usuario_id": "2",
       "prioridade_id": "1",
       "categoria_id": "3",
-      "nome": "Fechamento de Caixa",
+      "nome": "Consulta Médica",
       "data_hora": "2026-05-29T17:30:00",
       "repeticao_semanal": false,
       "repeticao_mensal": true
     },
     {
       "id": "3",
-      "usuario_id": "1",
+      "usuario_id": "3",
       "prioridade_id": "3",
-      "categoria_id": "2",
-      "nome": "Academia",
+      "categoria_id": "1",
+      "nome": "Organizar setup do computador",
       "data_hora": "2026-05-20T07:00:00",
       "repeticao_semanal": false,
       "repeticao_mensal": false

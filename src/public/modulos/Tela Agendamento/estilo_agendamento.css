@@ -170,3 +170,30 @@ footer {
     padding: 50px 20px;
     width: 100%;
 }
+
+.linha-selects {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+}
+
+.caixa-select {
+    width: 48%; 
+    padding: 15px; 
+    border-radius: 15px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    color: #1a606e;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.caixa-select:focus {
+    border-color: #1a606e;
+}
+
+select.campo-erro {
+    border: 2px solid rgb(190, 72, 4) !important;
+}
