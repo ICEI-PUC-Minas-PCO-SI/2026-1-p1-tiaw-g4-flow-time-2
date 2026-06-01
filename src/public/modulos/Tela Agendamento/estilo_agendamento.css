@@ -162,18 +162,54 @@ main {
     cursor: pointer;
 }
 
-footer {
-    text-align: center;
-    font-style: italic; 
-    background-color: #1a606e;
-    color: white;
-    padding: 50px 20px;
-    width: 100%;
+#container-tarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 40px;
 }
+
+.cartao-tarefa {
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-tarefa p {
+    color: #1a606e;
+    margin-bottom: 5px;
+}
+
+.titulo-tarefa {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.botoes-tarefa {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-acao {
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-editar { background-color: #99b8b0; }
+.btn-excluir { background-color: #465b5c; }
 
 .linha-selects {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     width: 100%;
 }
 

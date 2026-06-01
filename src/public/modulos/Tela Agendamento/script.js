@@ -117,30 +117,140 @@ function salvarAgendamento() {
     let dadosSalvos = localStorage.getItem('db_tarefas');
     let objetoJSON = dadosSalvos ? JSON.parse(dadosSalvos) : { "tarefas": [] };
 
-    let proximoId = "1"; 
-    if (objetoJSON.tarefas.length > 0) {
-        let ultimoItem = objetoJSON.tarefas[objetoJSON.tarefas.length - 1];
-        proximoId = (parseInt(ultimoItem.id) + 1).toString();
-    }
-
     let partesData = inputData.value.split('/');
     let dataPadraoInternacional = `${partesData[2]}-${partesData[1]}-${partesData[0]}`;
     let horaComSegundos = `${inputHora.value}:00`;
 
-    let novaTarefa = {
-        id: proximoId, 
-        usuario_id: "1",
-        prioridade_id: selectPrioridade.value,
-        categoria_id: selectCategoria.value,
-        nome: inputTarefa.value,
-        data_hora: `${dataPadraoInternacional}T${horaComSegundos}`,
-        repeticao_semanal: repeticaoSemanal,
-        repeticao_mensal: repeticaoMensal
-    };
+    if (idEmEdicao) {
+        let index = objetoJSON.tarefas.findIndex(t => t.id === idEmEdicao);
+        if (index !== -1) {
+            objetoJSON.tarefas[index].nome = inputTarefa.value;
+            objetoJSON.tarefas[index].data_hora = `${dataPadraoInternacional}T${horaComSegundos}`;
+            objetoJSON.tarefas[index].categoria_id = selectCategoria.value;
+            objetoJSON.tarefas[index].prioridade_id = selectPrioridade.value;
+            objetoJSON.tarefas[index].repeticao_semanal = repeticaoSemanal;
+            objetoJSON.tarefas[index].repeticao_mensal = repeticaoMensal;
+        }
+        idEmEdicao = null;
+        document.querySelector('.botao-agendar').textContent = "AGENDAR";
+        alert("Tarefa atualizada com sucesso!");
+    } else {
+        let proximoId = "1"; 
+        if (objetoJSON.tarefas.length > 0) {
+            let ultimoItem = objetoJSON.tarefas[objetoJSON.tarefas.length - 1];
+            proximoId = (parseInt(ultimoItem.id) + 1).toString();
+        }
 
-    objetoJSON.tarefas.push(novaTarefa);
+        let novaTarefa = {
+            id: proximoId, 
+            usuario_id: "1",
+            prioridade_id: selectPrioridade.value,
+            categoria_id: selectCategoria.value,
+            nome: inputTarefa.value,
+            data_hora: `${dataPadraoInternacional}T${horaComSegundos}`,
+            repeticao_semanal: repeticaoSemanal,
+            repeticao_mensal: repeticaoMensal
+        };
+        objetoJSON.tarefas.push(novaTarefa);
+        alert("Tarefa agendada com sucesso!");
+    }
+
     localStorage.setItem('db_tarefas', JSON.stringify(objetoJSON));
+    
+    limparFormulario();
+    carregarTarefas();
+}
 
-    alert("Tarefa agendada com sucesso!");
-    location.reload();
+let idEmEdicao = null;
+
+// Função para ler (Read) e exibir as tarefas
+function carregarTarefas() {
+    let dadosSalvos = localStorage.getItem('db_tarefas');
+    let objetoJSON = dadosSalvos ? JSON.parse(dadosSalvos) : { "tarefas": [] };
+    let container = document.getElementById('container-tarefas');
+    container.innerHTML = '';
+
+    objetoJSON.tarefas.forEach(tarefa => {
+        let cartao = document.createElement('div');
+        cartao.classList.add('cartao-tarefa');
+        
+        // Formatando data para exibição
+        let dataHora = tarefa.data_hora.split('T');
+        let dataSplit = dataHora[0].split('-');
+        let dataFormatada = `${dataSplit[2]}/${dataSplit[1]}/${dataSplit[0]}`;
+        let horaFormatada = dataHora[1].substring(0, 5);
+
+        // Cartão gerado sem nenhum emoji
+        cartao.innerHTML = `
+            <div class="info-tarefa">
+                <p class="titulo-tarefa">${tarefa.nome}</p>
+                <p>Data: ${dataFormatada} | Hora: ${horaFormatada}</p>
+            </div>
+            <div class="botoes-tarefa">
+                <button class="btn-acao btn-editar" onclick="editarTarefa('${tarefa.id}')">Editar</button>
+                <button class="btn-acao btn-excluir" onclick="excluirTarefa('${tarefa.id}')">Excluir</button>
+            </div>
+        `;
+        container.appendChild(cartao);
+    });
+}
+window.onload = carregarTarefas;
+
+function excluirTarefa(id) {
+    if (confirm("Tem certeza que deseja excluir esta tarefa?")) {
+        let dadosSalvos = localStorage.getItem('db_tarefas');
+        let objetoJSON = JSON.parse(dadosSalvos);
+        
+        objetoJSON.tarefas = objetoJSON.tarefas.filter(t => t.id !== id);
+        localStorage.setItem('db_tarefas', JSON.stringify(objetoJSON));
+        
+        carregarTarefas();
+    }
+}
+
+function editarTarefa(id) {
+    let dadosSalvos = localStorage.getItem('db_tarefas');
+    let objetoJSON = JSON.parse(dadosSalvos);
+    let tarefa = objetoJSON.tarefas.find(t => t.id === id);
+
+    if(tarefa) {
+        document.querySelector('.campo-tarefa').value = tarefa.nome;
+        
+        let dataHora = tarefa.data_hora.split('T');
+        let dataSplit = dataHora[0].split('-');
+        let inputData = document.querySelector('input[placeholder="00/00/0000"]');
+        inputData.value = `${dataSplit[2]}${dataSplit[1]}${dataSplit[0]}`;
+        mascaraData(inputData); 
+        
+        let inputHora = document.querySelector('input[placeholder="00:00"]');
+        inputHora.value = dataHora[1].substring(0, 5).replace(':', '');
+        mascaraHora(inputHora); 
+
+        document.getElementById('categoria').value = tarefa.categoria_id;
+        document.getElementById('prioridade').value = tarefa.prioridade_id;
+
+        document.getElementById('caixa-semanal').classList.remove('ativa');
+        document.getElementById('icone-semanal').src = 'img/emptybox.png';
+        document.getElementById('caixa-mensal').classList.remove('ativa');
+        document.getElementById('icone-mensal').src = 'img/emptybox.png';
+
+        if(tarefa.repeticao_semanal) alternarCheckbox('semanal');
+        if(tarefa.repeticao_mensal) alternarCheckbox('mensal');
+
+        idEmEdicao = id;
+        document.querySelector('.botao-agendar').textContent = "ATUALIZAR";
+        window.scrollTo(0, 0);
+    }
+}
+
+function limparFormulario() {
+    document.querySelector('.campo-tarefa').value = '';
+    document.querySelector('input[placeholder="00/00/0000"]').value = '';
+    document.querySelector('input[placeholder="00:00"]').value = '';
+    document.getElementById('categoria').value = '';
+    document.getElementById('prioridade').value = '';
+    document.getElementById('caixa-semanal').classList.remove('ativa');
+    document.getElementById('icone-semanal').src = 'img/emptybox.png';
+    document.getElementById('caixa-mensal').classList.remove('ativa');
+    document.getElementById('icone-mensal').src = 'img/emptybox.png';
 }
