@@ -204,7 +204,7 @@ main {
     font-size: 16px;
 }
 
-.btn-editar { background-color: #99b8b0; }
+.btn-editar { background-color: #5c9284; }
 .btn-excluir { background-color: #465b5c; }
 
 .linha-selects {
@@ -233,3 +233,4 @@ main {
 select.campo-erro {
     border: 2px solid rgb(190, 72, 4) !important;
 }
+
