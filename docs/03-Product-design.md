@@ -27,9 +27,6 @@ Com base na análise das personas, foram identificadas as seguintes histórias d
 
 ## Proposta de valor
 
-
-
-
 ### Proposta de valor - Leticia
 ![Proposta de valor Leticia](images/Letícia%20Proposta.png)
 ### Proposta de valor - marcos
@@ -78,8 +75,6 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 | RNF-010 | Modularidade | BAIXA    |
 
 
-
-
 ## Restrições
 
 Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
@@ -89,4 +84,8 @@ O projeto está restrito aos itens apresentados na tabela a seguir.
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
 |001| O projeto deverá ser entregue até o final do semestre |
+|002| O projeto depende de acesso a um dispositivo móvel compatível com o sistema operacional suportado |
+|003| A precisão das informações e relatórios de desempenho depende do correto preenchimento das tarefas pelo usuário |
+|004| O projeto é voltado para organização pessoal e não substitui acompanhamento profissional para problemas relacionados à produtividade ou saúde mental |
+|005| A interface deve ser simples e intuitiva, restringindo a implementação de funcionalidades excessivamente complexas |
 

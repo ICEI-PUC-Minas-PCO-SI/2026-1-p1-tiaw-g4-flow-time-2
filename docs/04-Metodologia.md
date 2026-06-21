@@ -39,7 +39,7 @@ O quadro é dividido em:
 ## Ferramentas
 | Ambiente                  | Plataforma       | Link de acesso |
 |---------------------------|-----------------|----------------|
-| Repositório de código     | GitHub          | [link]         |
+| Repositório de código     | GitHub          | [https://github.com/ICEI-PUC-Minas-PCO-SI/2026-1-p1-tiaw-g4-flow-time-2.git]         |
 | Documentação do projeto   | GitHub          | [link]         |
 | Interface do projeto      | Figma           | [link]         |
 | Comunicação da equipe     | Discord/Slack   | [https://discord.gg/Z7yFRE4H]         |

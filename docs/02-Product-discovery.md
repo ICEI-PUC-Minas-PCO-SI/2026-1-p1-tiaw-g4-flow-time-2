@@ -5,21 +5,21 @@
 
 ## Etapa de entendimento
 
-### Matriz de Elinhamento - Mapa Stakeholders
 
-![Matriz de alinhamento - mapa Stakeholders](images/Matriz%20de%20alinhamento%20-%20mapa%20Stakeholders.png)
+### Mapa Stakeholders
+
+![Mapa de strakeholders](images/Matriz%20de%20stakeholders.png)
+
+### Matriz de Alinhamento
+
+![Matriz de alinhamento - mapa CSD](images/Matriz%20de%20alinhamento%20-%20mapa%20Stakeholders.png)
 
 ### Highlights de Pesquisa
 ![Highlights de Pesquisa](images/Highlights%20de%20Pesquisa.png)
 
 ## Etapa de definição
 
-
-
 ### Personas
-
-
-
 
 ![Persona 1](images/Marcos%20-%20Entendimento%20-%20Definição%20Template%20TIAW%20(2026_1).png)
 
