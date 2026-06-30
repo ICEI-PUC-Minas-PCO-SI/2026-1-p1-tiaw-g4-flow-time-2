@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário & Tarefas</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <header class="header-global">
+            <img src="../../assets/images/menu.png" class="icon-btn" alt="Menu">
+            <img src="../../assets/images/calendario.png" style="width:35px; object-fit: contain;" alt="Ícone Calendário">
+            <img src="../../assets/images/perfil.png" class="icon-btn" alt="Perfil">
+        </header>
+
+        <div class="faixa-titulo">
+            CALENDÁRIO
+        </div>
+
+        <div class="calendar-card">
+            <div class="calendar-header">
+                <button id="prevMonth">&lt;</button>
+                <h2 id="monthDisplay">Junho 2026</h2>
+                <button id="nextMonth">&gt;</button>
+            </div>
+            <div class="weekdays"><div>D</div><div>S</div><div>T</div><div>Q</div><div>Q</div><div>S</div><div>S</div></div>
+            <div class="days-grid" id="daysGrid"></div>
+        </div>
+
+        <div class="area-novo-agendamento">
+            <button class="btn-add-cal" onclick="irParaAgendamentoComDia()">
+                <span style="font-size: 16px;">➕</span> Adicionar tarefa para este dia
+            </button>
+        </div>
+
+        <div class="rodape-container">
+            <h3 id="agendaTitle" class="titulo-rodape-cal">TAREFAS DO DIA</h3>
+            
+            <div class="filtros-rodape">
+                <select id="filtroCategoriaRodape" class="select-filtro-cal" onchange="filtrarRodape()">
+                    <option value="">Todas as Categorias</option>
+                    <option value="1">Trabalho</option>
+                    <option value="2">Estudos</option>
+                    <option value="3">Saúde</option>
+                    <option value="4">Lazer</option>
+                    <option value="5">Outros</option>
+                </select>
+
+                <select id="filtroPrioridadeRodape" class="select-filtro-cal" onchange="filtrarRodape()">
+                    <option value="">Todas as Prioridades</option>
+                    <option value="1">Prioridade Alta</option>
+                    <option value="2">Prioridade Média</option>
+                    <option value="3">Prioridade Baixa</option>
+                </select>
+            </div>
+
+            <div id="taskList"></div>
+        </div>
+
+    </div>
+    <script src="../../assets/js/script.js"></script>
+    <script src="../../assets/js/seed.js"></script>
+</body>
+</html>

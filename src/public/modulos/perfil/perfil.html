@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <header class="header-global">
+            <img src="../../assets/images/menu.png" class="icon-btn" alt="Menu" onclick="window.location.href='../menu/index.html'">
+            <span class="titulo-header">MEU PERFIL</span>
+            <div style="width: 28px;"></div>
+        </header>
+
+        <main style="padding: 30px 25px; display: flex; flex-direction: column; align-items: center; flex: 1;">
+            
+            <div class="home-avatar-majestoso" style="margin-bottom: 25px; position: relative;">
+                <div class="anel-gradiente-avatar" style="width: 110px; height: 110px;">
+                    <img src="../../assets/images/perfil.png" alt="Avatar do Usuário">
+                </div>
+            </div>
+
+            <div class="caixa-login">
+                <p style="font-size: 12px; font-weight: bold; color: var(--azul-medio); margin-left: 15px; margin-bottom: 5px;">Nome Completo</p>
+                <input type="text" id="editNome" class="input-login">
+            </div>
+
+            <div class="caixa-login">
+                <p style="font-size: 12px; font-weight: bold; color: var(--azul-medio); margin-left: 15px; margin-bottom: 5px;">E-mail</p>
+                <input type="email" id="editEmail" class="input-login">
+            </div>
+
+            <div class="caixa-login" style="margin-bottom: 30px;">
+                <p style="font-size: 12px; font-weight: bold; color: var(--azul-medio); margin-left: 15px; margin-bottom: 5px;">Sua Senha</p>
+                <input type="password" id="editSenha" class="input-login">
+            </div>
+
+            <button class="botao-agendar" onclick="salvarPerfil()">SALVAR ALTERAÇÕES</button>
+
+            <!-- Botão de Apagar Tarefas Seguríssimo sem Alerts -->
+            <button id="btnApagarTarefas" style="margin-top: 20px; background: transparent; border: 2px solid #C62828; color: #C62828; width: 100%; padding: 14px; border-radius: 30px; font-weight: bold; cursor: pointer; transition: all 0.2s;" data-confirmado="nao" onclick="apagarTodosAgendamentos(this)">APAGAR MEUS AGENDAMENTOS</button>
+
+            <button style="margin-top: 15px; background: transparent; border: 2px solid var(--azul-escuro); color: var(--azul-escuro); width: 100%; padding: 14px; border-radius: 30px; font-weight: bold; cursor: pointer;" onclick="fazerLogout()">SAIR DA CONTA</button>
+
+        </main>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sessaoAtual = sessionStorage.getItem('usuarioLogado');
+            if (!sessaoAtual) { window.location.href = '../login/login.html'; return; }
+            const usuario = JSON.parse(sessaoAtual);
+            document.getElementById('editNome').value = usuario.nome;
+            document.getElementById('editEmail').value = usuario.email;
+            document.getElementById('editSenha').value = usuario.senha;
+        });
+
+        function salvarPerfil() {
+            const novoNome = document.getElementById('editNome').value.trim();
+            const novoEmail = document.getElementById('editEmail').value.trim();
+            const novaSenha = document.getElementById('editSenha').value.trim();
+
+            if(!novoNome || !novaSenha || !novoEmail) { mostrarToastLogin("Preencha todos os campos!", "#C62828"); return; }
+
+            let usuarioAtual = JSON.parse(sessionStorage.getItem('usuarioLogado'));
+            let db = JSON.parse(localStorage.getItem('flowtime_usuarios'));
+
+            let index = db.findIndex(u => u.id === usuarioAtual.id);
+            if (index !== -1) {
+                // Checa se o novo email já existe em outra conta
+                if (novoEmail !== usuarioAtual.email && db.find(u => u.email === novoEmail)) {
+                    mostrarToastLogin("Este e-mail já pertence a outra conta!", "#C62828"); return;
+                }
+                db[index].nome = novoNome; db[index].email = novoEmail; db[index].senha = novaSenha;
+                localStorage.setItem('flowtime_usuarios', JSON.stringify(db));
+            }
+
+            usuarioAtual.nome = novoNome; usuarioAtual.email = novoEmail; usuarioAtual.senha = novaSenha;
+            sessionStorage.setItem('usuarioLogado', JSON.stringify(usuarioAtual));
+            mostrarToastLogin("Perfil atualizado com sucesso!", "#41d09a");
+        }
+
+        let timeoutApagar = null;
+        function apagarTodosAgendamentos(btn) {
+            // Lógica inteligente de duplo clique espaçado
+            if (btn.dataset.confirmado === "sim") {
+                let dbTarefas = JSON.parse(localStorage.getItem('tarefas')) || [];
+                let usuarioAtual = JSON.parse(sessionStorage.getItem('usuarioLogado'));
+                
+                // Extermina só as tarefas com o ID do usuário atual
+                dbTarefas = dbTarefas.filter(t => t.usuario_id !== usuarioAtual.id);
+                localStorage.setItem('tarefas', JSON.stringify(dbTarefas));
+                
+                mostrarToastLogin("Sua agenda foi limpa!", "#C62828");
+                btn.textContent = "APAGAR MEUS AGENDAMENTOS"; btn.dataset.confirmado = "nao"; btn.style.backgroundColor = "transparent"; btn.style.color = "#C62828";
+                clearTimeout(timeoutApagar);
+            } else {
+                btn.textContent = "TEM CERTEZA? CLIQUE NOVAMENTE!"; btn.dataset.confirmado = "sim"; btn.style.backgroundColor = "#FFEBEE";
+                timeoutApagar = setTimeout(() => {
+                    btn.textContent = "APAGAR MEUS AGENDAMENTOS"; btn.dataset.confirmado = "nao"; btn.style.backgroundColor = "transparent"; btn.style.color = "#C62828";
+                }, 3000);
+            }
+        }
+
+        function fazerLogout() { sessionStorage.removeItem('usuarioLogado'); window.location.href = '../login/login.html'; }
+
+        function mostrarToastLogin(mensagem, corHex) {
+            const container = document.querySelector('.app-container'); const toast = document.createElement('div');
+            toast.innerText = mensagem; toast.style.position = 'absolute'; toast.style.top = '20px'; toast.style.left = '50%'; toast.style.transform = 'translateX(-50%)';
+            toast.style.backgroundColor = corHex; toast.style.color = 'white'; toast.style.padding = '12px 25px'; toast.style.borderRadius = '25px'; toast.style.fontWeight = 'bold'; toast.style.fontSize = '14px'; toast.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)'; toast.style.zIndex = '1000'; toast.style.animation = 'surgimentoToast 0.3s ease-out';
+            container.appendChild(toast); setTimeout(() => { toast.style.opacity = '0'; toast.style.transition = 'opacity 0.5s'; setTimeout(() => toast.remove(), 500); }, 3000);
+        }
+    </script>
+</body>
+</html>

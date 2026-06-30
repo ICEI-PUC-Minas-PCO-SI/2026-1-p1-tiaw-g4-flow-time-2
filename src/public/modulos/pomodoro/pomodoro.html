@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método Pomodoro</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- Cabeçalho Global com o Ícone do Pomodoro Restaurado -->
+        <header class="header-global">
+            <img src="../../assets/images/menu.png" class="icon-btn" alt="Menu">
+            <img src="../../assets/images/pomodoro.png" style="width: 42px; height: 42px; object-fit: contain;" alt="Logo Pomodoro">
+            <img src="../../assets/images/perfil.png" class="icon-btn" alt="Perfil">
+        </header>
+
+        <div class="faixa-titulo">
+            MÉTODO POMODORO
+        </div>
+
+        <div class="pomodoro-wrapper">
+
+            <!-- Configuração de Tempo de Foco Atualizada -->
+            <div class="config-pomodoro">
+                <label for="tempoFoco">Tempo de foco</label>
+                <select id="tempoFoco">
+                    <option value="15">15 min</option>
+                    <option value="25" selected>25 min</option>
+                    <option value="30">30 min</option>
+                    <option value="45">45 min</option>
+                    <option value="60">60 min</option>
+                    <option value="90">90 min</option>
+                </select>
+                <button id="btnSalvarTempo">Salvar Tempo</button>
+            </div>
+
+            <!-- Relógio SVG Blindado contra Cortes -->
+            <div class="timer-container">
+                <svg class="progress-ring" width="230" height="230">
+                    <defs>
+                        <linearGradient id="gradiente" x1="0%" y1="100%" x2="0%" y2="0%">
+                            <stop offset="0%" stop-color="#1b6a82" />
+                            <stop offset="100%" stop-color="#41d09a" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="bg" cx="115" cy="115" r="100"></circle>
+                    <circle class="progress" cx="115" cy="115" r="100"></circle>
+                </svg>
+                <div class="timer-text" id="timer">25:00</div>
+            </div>
+
+            <!-- Botões Principais Milimetricamente Alinhados -->
+            <button class="btn-start" onclick="iniciarPomodoro()">
+                <img src="../../assets/images/play.png" class="btn-icon" alt="Play">
+                <span>COMEÇAR</span>
+            </button>
+
+            <div class="controls">
+                <button onclick="pausarPomodoro()">
+                    <img src="../../assets/images/pausar.png" class="btn-icon" alt="Pausar">
+                    <span>Pausar</span>
+                </button>
+                <button onclick="pularPomodoro()">
+                    <img src="../../assets/images/pular.png" class="btn-icon" alt="Pular">
+                    <span>Pular</span>
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../../assets/js/script.js"></script>
+
+</body>
+</html>

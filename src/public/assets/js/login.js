@@ -1,138 +1,102 @@
-// Trabalho Interdisciplinar 1 - Aplicações Web
-//
-// Esse módulo realiza o registro de novos usuários e login para aplicações com 
-// backend baseado em API REST provida pelo JSONServer
-// Os dados de usuário estão localizados no arquivo db.json que acompanha este projeto.
-//
-// Autor: Rommel Vieira Carneiro (rommelcarneiro@gmail.com)
-// Data: 09/09/2024
-//
-// Código LoginApp  
+document.addEventListener('DOMContentLoaded', () => {
+    inicializarBancoUsuarios();
+});
 
-
-// Página inicial de Login
-const LOGIN_URL = "/modulos/login/login.html";
-let RETURN_URL = "/modulos/login/index.html";
-const API_URL = '/usuarios';
-
-// Objeto para o banco de dados de usuários baseado em JSON
-var db_usuarios = {};
-
-// Objeto para o usuário corrente
-var usuarioCorrente = {};
-
-// Inicializa a aplicação de Login
-function initLoginApp () {
-    let pagina = window.location.pathname;
-    if (pagina != LOGIN_URL) {
-        // CONFIGURA A URLS DE RETORNO COMO A PÁGINA ATUAL
-        sessionStorage.setItem('returnURL', pagina);
-        RETURN_URL = pagina;
-
-        // INICIALIZA USUARIOCORRENTE A PARTIR DE DADOS NO LOCAL STORAGE, CASO EXISTA
-        usuarioCorrenteJSON = sessionStorage.getItem('usuarioCorrente');
-        if (usuarioCorrenteJSON) {
-            usuarioCorrente = JSON.parse (usuarioCorrenteJSON);
-        } else {
-            window.location.href = LOGIN_URL;
-        }
-
-        // REGISTRA LISTENER PARA O EVENTO DE CARREGAMENTO DA PÁGINA PARA ATUALIZAR INFORMAÇÕES DO USUÁRIO
-        document.addEventListener('DOMContentLoaded', function () {
-            showUserInfo ('userInfo');
-        });
-    }
-    else {
-        // VERIFICA SE A URL DE RETORNO ESTÁ DEFINIDA NO SESSION STORAGE, CASO CONTRARIO USA A PÁGINA INICIAL
-        let returnURL = sessionStorage.getItem('returnURL');
-        RETURN_URL = returnURL || RETURN_URL
-        
-        // INICIALIZA BANCO DE DADOS DE USUÁRIOS
-        carregarUsuarios(() => {
-            console.log('Usuários carregados...');
-        });
-    }
-};
-
-
-function carregarUsuarios(callback) {
-    fetch(API_URL)
-    .then(response => response.json())
-    .then(data => {
-        db_usuarios = data;
-        callback ()
-    })
-    .catch(error => {
-        console.error('Erro ao ler usuários via API JSONServer:', error);
-        displayMessage("Erro ao ler usuários");
-    });
-}
-
-// Verifica se o login do usuário está ok e, se positivo, direciona para a página inicial
-function loginUser (login, senha) {
-
-    // Verifica todos os itens do banco de dados de usuarios 
-    // para localizar o usuário informado no formulario de login
-    for (var i = 0; i < db_usuarios.length; i++) {
-        var usuario = db_usuarios[i];
-
-        // Se encontrou login, carrega usuário corrente e salva no Session Storage
-        if (login == usuario.login && senha == usuario.senha) {
-            usuarioCorrente.id = usuario.id;
-            usuarioCorrente.login = usuario.login;
-            usuarioCorrente.email = usuario.email;
-            usuarioCorrente.nome = usuario.nome;
-
-            // Salva os dados do usuário corrente no Session Storage, mas antes converte para string
-            sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
-
-            // Retorna true para usuário encontrado
-            return true;
-        }
+function inicializarBancoUsuarios() {
+    let dbStr = localStorage.getItem('flowtime_usuarios');
+    let db = dbStr ? JSON.parse(dbStr) : [];
+    
+    // VERIFICAÇÃO INTELIGENTE: Busca especificamente se o Admin já existe
+    const adminExiste = db.find(u => u.email === "admin");
+    if (!adminExiste) {
+        db.push({ id: "usr_admin", nome: "Administrador", email: "admin", senha: "123456" });
     }
 
-    // Se chegou até aqui é por que não encontrou o usuário e retorna falso
-    return false;
+    // VERIFICAÇÃO INTELIGENTE: Busca especificamente se o Marcos já existe
+    const marcosExiste = db.find(u => u.email === "marcos@teste.com");
+    if (!marcosExiste) {
+        db.push({ id: "usr_padrao_01", nome: "Marcos", email: "marcos@teste.com", senha: "123" });
+    }
+
+    // Salva o banco atualizado de volta no navegador
+    localStorage.setItem('flowtime_usuarios', JSON.stringify(db));
 }
 
-// Apaga os dados do usuário corrente no sessionStorage
-function logoutUser () {
-    sessionStorage.removeItem ('usuarioCorrente');
-    window.location = LOGIN_URL;
+function alternarTelas(telaId) {
+    document.getElementById('tela-login').style.display = 'none';
+    document.getElementById('tela-registro').style.display = 'none';
+    document.getElementById(telaId).style.display = 'flex';
 }
 
-function addUser (nome, login, senha, email) {
+function fazerLogin() {
+    const email = document.getElementById('loginEmail').value.trim();
+    const pass = document.getElementById('loginSenha').value.trim();
 
-    // Cria um objeto de usuario para o novo usuario 
-    let usuario = { "login": login, "senha": senha, "nome": nome, "email": email };
+    if (!email || !pass) {
+        mostrarToastLogin("Preencha e-mail/usuário e senha!", "#C62828");
+        return;
+    }
 
-    // Envia dados do novo usuário para ser inserido no JSON Server
-    fetch(API_URL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(usuario),
-    })
-        .then(response => response.json())
-        .then(data => {
-            // Adiciona o novo usuário na variável db_usuarios em memória
-            db_usuarios.push (usuario);
-            displayMessage("Usuário inserido com sucesso");
-        })
-        .catch(error => {
-            console.error('Erro ao inserir usuário via API JSONServer:', error);
-            displayMessage("Erro ao inserir usuário");
-        });
-}
+    const db = JSON.parse(localStorage.getItem('flowtime_usuarios')) || [];
+    const usuarioEncontrado = db.find(u => u.email === email && u.senha === pass);
 
-function showUserInfo (element) {
-    var elemUser = document.getElementById(element);
-    if (elemUser) {
-        elemUser.innerHTML = `${usuarioCorrente.nome} (${usuarioCorrente.login}) 
-                    <a onclick="logoutUser()">❌</a>`;
+    if (usuarioEncontrado) {
+        sessionStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
+        window.location.href = '../menu/index.html';
+    } else {
+        mostrarToastLogin("Credenciais incorretas!", "#C62828");
     }
 }
 
-// Inicializa as estruturas utilizadas pelo LoginApp
-initLoginApp ();
+function registrarUsuario() {
+    const nome = document.getElementById('regNome').value.trim();
+    const email = document.getElementById('regEmail').value.trim();
+    const pass = document.getElementById('regSenha').value.trim();
+    const passConf = document.getElementById('regSenhaConfirma').value.trim();
+
+    if (!nome || !email || !pass || !passConf) {
+        mostrarToastLogin("Preencha todos os campos!", "#C62828");
+        return;
+    }
+
+    if (pass !== passConf) {
+        mostrarToastLogin("As senhas não conferem!", "#C62828");
+        return;
+    }
+
+    const db = JSON.parse(localStorage.getItem('flowtime_usuarios')) || [];
+    
+    if (db.find(u => u.email === email)) {
+        mostrarToastLogin("Este e-mail já está cadastrado!", "#C62828");
+        return;
+    }
+
+    const novoId = `usr_${Date.now()}`;
+    db.push({ id: novoId, nome: nome, email: email, senha: pass });
+    localStorage.setItem('flowtime_usuarios', JSON.stringify(db));
+
+    mostrarToastLogin("Conta criada com sucesso!", "#41d09a");
+    
+    document.getElementById('regNome').value = '';
+    document.getElementById('regEmail').value = '';
+    document.getElementById('regSenha').value = '';
+    document.getElementById('regSenhaConfirma').value = '';
+    
+    setTimeout(() => {
+        alternarTelas('tela-login');
+    }, 1500);
+}
+
+function mostrarToastLogin(mensagem, corHex) {
+    const container = document.querySelector('.app-container');
+    if (!container) return;
+    const toast = document.createElement('div');
+    toast.innerText = mensagem;
+    toast.style.position = 'absolute'; toast.style.top = '20px'; toast.style.left = '50%'; toast.style.transform = 'translateX(-50%)';
+    toast.style.backgroundColor = corHex; toast.style.color = 'white'; toast.style.padding = '12px 25px';
+    toast.style.borderRadius = '25px'; toast.style.fontWeight = 'bold'; toast.style.fontSize = '14px';
+    toast.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)'; toast.style.zIndex = '1000';
+    toast.style.animation = 'surgimentoToast 0.3s ease-out';
+    container.appendChild(toast);
+    setTimeout(() => { toast.style.opacity = '0'; toast.style.transition = 'opacity 0.5s'; setTimeout(() => toast.remove(), 500); }, 3000);
+}

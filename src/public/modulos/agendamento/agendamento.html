@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Tarefas</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Header Global Padrão -->
+        <header class="header-global">
+            <img src="../../assets/images/menu.png" class="icon-btn" alt="Menu">
+            <img src="../../assets/images/agendar.png" style="width: 42px; object-fit: contain;" alt="Ícone Agendar">
+            <img src="../../assets/images/perfil.png" class="icon-btn" alt="Perfil">
+        </header>
+
+        <!-- Faixa de Título Original -->
+        <div class="faixa_titulo">
+            <p>AGENDAR TAREFAS</p>
+        </div>
+
+        <main class="main-agendamento-jhon">
+            
+            <div class="bloco-tarefa-jhon">
+                <span class="mais-jhon">+</span>
+                <input type="text" placeholder="Nome da Tarefa..." class="campo-tarefa">
+            </div>
+            
+            <div class="linha-data-hora-jhon">
+                <div class="caixa-data-hora">
+                    <p>DATA</p>
+                    <input type="text" placeholder="00/00/0000" class="input-transparente" oninput="mascaraData(this)">
+                </div>
+                <div class="caixa-data-hora">
+                    <p>HORA</p>
+                    <input type="text" placeholder="00:00" class="input-transparente" oninput="mascaraHora(this)">
+                </div>
+            </div>
+            
+            <div class="caixa-repeticao" id="caixa-semanal" onclick="alternarCheckbox('semanal')">
+                <div class="linha-checkbox">
+                    <img src="../../assets/images/emptybox.png" class="icon-check" id="icone-semanal" alt="Desmarcado">
+                    <p class="texto-checkbox">Repetir semanalmente</p>
+                </div>
+            </div>
+
+            <div class="caixa-repeticao" id="caixa-mensal" onclick="alternarCheckbox('mensal')">
+                <div class="linha-checkbox">
+                    <img src="../../assets/images/emptybox.png" class="icon-check" id="icone-mensal" alt="Desmarcado">
+                    <p class="texto-checkbox">Repetir mensalmente</p>
+                </div>
+            </div>
+
+            <div class="linha-selects-jhon">
+                <select id="categoria" class="caixa-select">
+                    <option value="" disabled selected hidden>Categoria</option>
+                    <option value="1">Trabalho</option>
+                    <option value="2">Estudos</option>
+                    <option value="3">Saúde</option>
+                    <option value="4">Lazer</option>
+                    <option value="5">Outros</option>
+                </select>
+
+                <select id="prioridade" class="caixa-select">
+                    <option value="" disabled selected hidden>Prioridade</option>
+                    <option value="1">Alta</option>
+                    <option value="2">Média</option>
+                    <option value="3">Baixa</option>
+                </select>
+            </div>
+
+            <div class="centralizar-botao-jhon">
+                <button class="botao-agendar" onclick="salvarAgendamento()">AGENDAR</button>
+            </div>
+
+        </main>
+
+    </div>
+    <script src="../../assets/js/script.js"></script>
+</body>
+</html>

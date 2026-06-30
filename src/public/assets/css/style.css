@@ -1,56 +1,159 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"); 
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap');
 
-h3 {
-    color: #093070;
-    border-bottom: 1px solid #c1c1c1;
-}
-h4 {
-    color: #ff7645;
+:root {
+    --azul-escuro: #1a606e;
+    --azul-medio: #1b6a82;
+    --verde-destaque: #41d09a;
+    --menta-claro: #c9ebe3;
+    --fundo-app: #f2fcfb;
+    --branco: #ffffff;
 }
 
-.banner img {
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none; -webkit-user-drag: none;
+}
+
+body {
+    background: linear-gradient(to bottom, #cfe7e1, #eaf3f1);
+    display: flex; justify-content: center; align-items: center;
+    min-height: 100vh; color: var(--azul-escuro);
+}
+
+.app-container {
+    width: 360px; height: 640px; background-color: var(--fundo-app);
+    border: 8px solid #333333; border-radius: 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2); display: flex;
+    flex-direction: column; overflow-x: hidden; overflow-y: auto;
+    scrollbar-width: none; -ms-overflow-style: none; position: relative;
+}
+.app-container::-webkit-scrollbar { display: none; }
+
+@media (max-width: 480px) { .app-container { width: 100vw; height: 100vh; border: none; border-radius: 0; } }
+
+/* ========================================================= */
+/* ESTILOS DE LOGIN E PERFIL                                 */
+/* ========================================================= */
+.caixa-login { width: 100%; margin-bottom: 15px; }
+
+.input-login {
     width: 100%;
+    background-color: #f0f5f4;
+    border: 2px solid #d1e0dd; 
+    border-radius: 50px;       
+    padding: 16px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--azul-escuro);
+    outline: none;
+    transition: all 0.3s ease;
 }
 
-.barra-info {
-    height: 2em;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: space-between;
+.input-login:focus {
+    border: 2px solid var(--verde-destaque);
+    background-color: white;
 }
 
-.menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
+/* ========================================================= */
+/* ELEMENTOS GLOBAIS                                         */
+/* ========================================================= */
+.header-global { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background-color: var(--branco); border-bottom: 1px solid rgba(0,0,0,0.05); }
+.header-global .icon-btn { width: 28px; height: 28px; cursor: pointer; transition: transform 0.1s; }
+.header-global .icon-btn:active { transform: scale(0.9); }
+.header-global .titulo-header { font-weight: 700; font-size: 15px; color: var(--azul-escuro); letter-spacing: 0.5px; }
+.faixa-titulo, .faixa_titulo { background-color: var(--menta-claro); color: var(--azul-escuro); font-weight: 700; text-align: center; padding: 15px; font-size: 14px; letter-spacing: 1px; width: 100%; margin-bottom: 15px; }
 
-.menu li {
-    display: inline;
-    margin: 0px;
-    padding: 0.5em 1em; 
-    height: 2em;
-    line-height: 2em;
-}
+/* ========================================================= */
+/* TELA INICIAL (HOME)                                       */
+/* ========================================================= */
+.logo-app-home { height: 35px; width: auto; object-fit: contain; }
+.faixa-cumprimento { background-color: var(--menta-claro); color: var(--azul-escuro); font-weight: 700; text-align: center; padding: 12px 20px; font-size: 13px; border-bottom: 1px solid rgba(0,0,0,0.04); }
+.home-logo-central { display: flex; flex-direction: column; align-items: center; padding: 18px 20px 5px; gap: 12px; margin-top: 5px; }
+.logo-majestosa { width: 115px; height: 115px; object-fit: contain; filter: drop-shadow(0 8px 18px rgba(27, 106, 130, 0.18)); }
+.home-logo-central p { font-size: 13px; color: #555; font-weight: 600; letter-spacing: 0.5px; }
+.home-avatar-majestoso { display: flex; flex-direction: column; align-items: center; padding: 15px 20px 5px; gap: 8px; margin-top: 5px; }
+.anel-gradiente-avatar { width: 88px; height: 88px; border-radius: 50%; background: linear-gradient(45deg, var(--verde-destaque), var(--azul-escuro)); padding: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.anel-gradiente-avatar img { width: 100%; height: 100%; border-radius: 50%; background-color: var(--branco); object-fit: cover; }
+.grid-wireframe-home { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 10px 25px 20px; margin-top: auto; }
+.card-botao-home { background-color: var(--menta-claro); border-radius: 22px; padding: 18px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.04); text-align: center; transition: transform 0.1s; }
+.card-botao-home:active { transform: scale(0.96); }
+.card-botao-home img { width: 48px; height: 48px; object-fit: contain; }
+.card-botao-home p { font-size: 12px; font-weight: 700; color: var(--azul-escuro); }
+.card-pomodoro-destaque { grid-column: span 2; padding: 16px; }
+.rodape-motivacional-home { background-color: var(--azul-escuro); color: var(--branco); padding: 20px 22px; text-align: center; font-style: italic; border-radius: 0 0 32px 32px; width: 100%; margin-top: auto; box-shadow: 0 -4px 15px rgba(0,0,0,0.05); }
+.rodape-motivacional-home p { font-size: 13px; font-weight: 600; line-height: 1.4; opacity: 0.95; }
 
-.menu li a {
-    text-decoration: none;
-    color: #ff7645;
-    font-weight: bold;
-}
+/* ========================================================= */
+/* TELA DE AGENDAMENTO                                       */
+/* ========================================================= */
+.main-agendamento-jhon { padding: 0 25px 25px; display: flex; flex-direction: column; flex: 1; }
+.bloco-tarefa-jhon { display: flex; align-items: center; border: 2px solid #ccc; border-radius: 20px; padding: 10px 15px; background-color: white; margin-bottom: 20px; }
+.mais-jhon { font-size: 25px; color: #1a606e; font-weight: bold; margin-right: 15px; }
+.campo-tarefa { width: 100%; border: none; outline: none; font-size: 16px; color: #1a606e; font-weight: 500; background: transparent; }
+.linha-data-hora-jhon { display: flex; justify-content: space-between; margin-bottom: 20px; }
+.caixa-data-hora { width: 48%; background-color: #c9ebe3; border-radius: 15px; padding: 15px; text-align: center; }
+.caixa-data-hora p { color: #1a606e; font-size: 12px; font-weight: bold; margin-bottom: 5px; }
+.input-transparente { width: 100%; border: none; background: transparent; font-size: 20px; font-weight: bold; color: #1a606e; outline: none; text-align: center; }
+.caixa-repeticao { padding: 15px; border-radius: 10px; cursor: pointer; transition: background-color 0.3s ease; margin-bottom: 10px; }
+.caixa-repeticao.ativa { background-color: #c9ebe3; }
+.linha-checkbox { display: flex; align-items: center; }
+.icon-check { width: 25px; height: 25px; margin-right: 15px; object-fit: contain; }
+.texto-checkbox { color: #1a606e; font-weight: bold; font-size: 16px; }
+.linha-selects-jhon { display: flex; justify-content: space-between; width: 100%; margin-top: 10px; margin-bottom: 25px; }
+.caixa-select { width: 48%; padding: 15px; border-radius: 15px; border: 2px solid #ccc; font-size: 15px; color: #1a606e; outline: none; background-color: white; cursor: pointer; font-weight: bold; }
+.centralizar-botao-jhon { text-align: center; margin-top: auto; padding-top: 20px; }
+.botao-agendar { border-radius: 50px; background: linear-gradient(to right, #1a606e, #3cd1aa); color: white; border: none; width: 100%; padding: 16px; font-weight: bold; font-size: 18px; cursor: pointer; box-shadow: 0 4px 15px rgba(26, 96, 110, 0.2); transition: transform 0.1s; }
+.botao-agendar:active { transform: scale(0.98); }
+.campo-erro { border: 2px solid rgb(190, 72, 4) !important; }
 
-.menu li:hover {
-    background-color: darkblue;
-    color: white;
-}
+/* ========================================================= */
+/* TELA DE CALENDÁRIO & POMODORO                             */
+/* ========================================================= */
+.calendar-card { background-color: var(--branco); border-radius: 20px; padding: 15px; margin: 0 20px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid #e0e0e0; }
+.calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.calendar-header button { background: none; border: none; font-size: 18px; font-weight: bold; color: var(--azul-escuro); cursor: pointer; }
+.calendar-header h2 { font-size: 16px; color: var(--azul-escuro); }
+.weekdays { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-weight: bold; font-size: 12px; color: #888; margin-bottom: 10px; }
+.days-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; text-align: center; }
+.day { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; border-radius: 50%; cursor: pointer; position: relative; }
+.day.has-event::after { content: ''; position: absolute; bottom: 4px; width: 5px; height: 5px; background-color: var(--verde-destaque); border-radius: 50%; }
+.day.selected { background-color: var(--azul-escuro); color: white; }
+.area-novo-agendamento { padding: 0 20px 15px; width: 100%; }
+.btn-add-cal { width: 100%; padding: 10px; border-radius: 15px; border: 2px dashed var(--azul-medio); background-color: var(--menta-claro); color: var(--azul-escuro); font-weight: 700; font-size: 13px; cursor: pointer; transition: transform 0.1s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.btn-add-cal:active { transform: scale(0.98); }
+.rodape-container { background-color: var(--azul-escuro); color: white; padding: 20px; border-radius: 0 0 32px 32px; width: 100%; margin-top: auto; flex: 1; }
+.titulo-rodape-cal { font-size: 13px; letter-spacing: 1px; margin-bottom: 12px; color: var(--menta-claro); text-align: center; }
+.filtros-rodape { display: flex; gap: 8px; margin-bottom: 15px; width: 100%; }
+.select-filtro-cal { flex: 1; padding: 8px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background-color: rgba(255, 255, 255, 0.12); color: var(--branco); font-size: 12px; font-weight: 600; outline: none; cursor: pointer; }
+.select-filtro-cal option { background-color: var(--azul-escuro); color: var(--branco); }
+.card-tarefa-rodape { background-color: white; border-radius: 14px; padding: 12px 15px; margin-bottom: 10px; display: flex; flex-direction: column; gap: 10px; border-left: 4px solid var(--verde-destaque); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.card-tarefa-topo { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.card-tarefa-info { display: flex; align-items: center; gap: 10px; flex: 1; }
+.rodape-hora { font-size: 14px; font-weight: 700; color: var(--azul-medio); }
+.rodape-titulo { font-size: 15px; font-weight: 600; color: var(--azul-escuro); }
+.card-tarefa-botoes { display: flex; gap: 6px; }
+.btn-acao-mini { background-color: #f0f5f4; border: none; border-radius: 8px; padding: 6px 10px; font-size: 13px; cursor: pointer; transition: transform 0.1s; }
+.btn-acao-mini:active { transform: scale(0.9); }
+.rodape-badges { display: flex; gap: 8px; flex-wrap: wrap; width: 100%; }
+.rodape-badges .badge { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.5px; }
 
-.dados-usuario {
-    height: 2em;
-    line-height: 2em;
-    margin-right: 20px;
-}
+.pomodoro-wrapper { display: flex; flex-direction: column; align-items: center; padding: 15px 20px 25px; flex: 1; justify-content: space-between; gap: 15px; }
+.config-pomodoro { display: flex; flex-direction: column; align-items: center; width: 100%; gap: 8px; z-index: 10; }
+.config-pomodoro label { font-size: 16px; font-weight: 700; color: var(--azul-escuro); }
+#tempoFoco { width: 150px; height: 42px; border: 2px solid var(--azul-medio); border-radius: 25px; background: linear-gradient(90deg, var(--azul-escuro), var(--verde-destaque)); color: white; font-size: 18px; font-weight: 700; text-align: center; cursor: pointer; outline: none; }
+#tempoFoco option { background-color: white; color: var(--azul-escuro); font-size: 16px; }
+#btnSalvarTempo { width: 150px; height: 36px; border: none; border-radius: 20px; background-color: var(--menta-claro); color: var(--azul-escuro); font-weight: 700; font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.timer-container { position: relative; width: 220px; height: 220px; display: flex; align-items: center; justify-content: center; margin: 5px 0; }
+.progress-ring { transform: rotate(-90deg); }
+.progress-ring .bg { fill: none; stroke: var(--menta-claro); stroke-width: 8; }
+.progress-ring .progress { fill: none; stroke: url(#gradiente); stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 1s linear; }
+.timer-text { position: absolute; font-size: 42px; font-weight: bold; color: var(--azul-escuro); }
+.btn-start { background: linear-gradient(to right, var(--azul-escuro), var(--verde-destaque)); color: white; border: none; padding: 14px; border-radius: 50px; width: 85%; font-size: 18px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.btn-start .btn-icon { width: 22px; height: 22px; object-fit: contain; display: block; }
+.controls { display: flex; justify-content: space-between; gap: 12px; width: 85%; }
+.controls button { flex: 1; padding: 12px; border-radius: 25px; border: none; background-color: var(--menta-claro); color: var(--azul-escuro); font-weight: bold; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.controls button .btn-icon { width: 16px; height: 16px; object-fit: contain; display: block; }
 
-main {
-    padding: 20px;
-}
+.toast-pomodoro { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); background: linear-gradient(to right, #1a606e, #41d09a); color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold; font-size: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1000; animation: surgimentoToast 0.3s ease-out; }
+@keyframes surgimentoToast { from { top: -50px; opacity: 0; } to { top: 20px; opacity: 1; } }
